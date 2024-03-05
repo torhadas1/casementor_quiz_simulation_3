@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Cases | Case 1</title>
+    <link rel="stylesheet" href="./style/cases_general.css">
+    <link rel="stylesheet" href="./style/case_1.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="item" id="invest">
+                        <a href="#" class="btn_active">Case Questions</a>
+                        <div class="smenu">
+                            <a href="#" class="btn_active">Case 1</a>
+                            <a href="#" class="target">Case 2</a>
+                            <a href="#" class="target">Case 3</a>
+                            <a href="#" class="target">Case 4</a>
+                            <a href="#" class="target">Case 5</a>
+                            <a href="#" class="target">Case 6</a>
+                            <a href="#" class="target">Case 7</a>
+                            <a href="#" class="target">Case 8</a>
+                            <a href="#" class="target">Case 9</a>
+                            <a href="#" class="target">Case 10</a>
+                        </div>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+            </div>
+        </div>
+        <!--main screen column-->
+
+        <div class="main_screen column">
+            <div class="question_container">
+                <br>
+                <h1>The island present 4 common types of monkeys, summarized as below</h1>
+                <br>
+
+                <table>
+                    <tr>
+                        <th>Monkey Type</th>
+                        <th># of Monkeys</th>
+                    </tr>
+                    <tr>
+                        <td>Golden</td>
+                        <td class="draggable" draggable="true">32</td>
+                    </tr>
+                    <tr>
+                        <td>Japanese</td>
+                        <td class="draggable" draggable="true">28</td>
+                    </tr>
+                    <tr>
+                        <td>Blue</td>
+                        <td class="draggable" draggable="true">26</td>
+                    </tr>
+                    <tr>
+                        <td>Capuchin</td>
+                        <td class="draggable" draggable="true">22</td>
+                    </tr>
+                </table>
+                <br>
+                <div class="question_title">Question</div>
+                <br>
+                <p id="the_question">If the total number of monkey species on the island is
+                <p class="draggable small_drag" draggable="true">12</p> and
+                there is an average of <p class="draggable small_drag" draggable="true">20</p> animals for each species,
+                what is the
+                probability that a monkey is not one of the common types? The result should be reported in decimals
+                (e.g., 10% should be reported as 0.1)
+                </p>
+                <br>
+
+                <label for="answer">Answer</label>
+                <br>
+                <br>
+
+                <input class="input_answer" type="text" name="case_1_answer" id="Case 1" min="0" required>
+
+                <div><button class="end_btn" onclick="showConfirmBox()">Next Case</button></div>
+            </div>
+            <div class="container_main_screen">
+                <div class="overlay" id="overlay" hidden>
+                    <div class="confirm-box">
+                        <h2 id="forward">Do you want to move to the next question?</h2><br>
+                        <p id="inside_confirm_p">You won’t be able to change your answer</p>
+                        <br>
+                        <button onclick="isConfirm(false)" class="confirm_btn">Back to question</button>
+                        <button onclick="location.href='case_2.html';" class="confirm_btn">Move forward</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="right_screen column">
+        <div class="container">
+            <div class="calculator">
+                <div class="display">
+                    <input type="text" id="inputField">
+                    <hr id="sep_line">
+                    <div id="result" class="draggable" draggable="true"> 0 </div>
+
+                </div>
+                <div class="buttons">
+                    <button class="calculator-btn" data-value="AC">AC</button>
+                    <button class="calculator-btn" data-value="(">(</button>
+                    <button class="calculator-btn" data-value=")">)</button>
+                    <button class="calculator-btn" data-value="C">C</button>
+                    <button class="calculator-btn" data-value="7">7</button>
+                    <button class="calculator-btn" data-value="8">8</button>
+                    <button class="calculator-btn" data-value="9">9</button>
+                    <button class="calculator-btn" data-value="/">/</button>
+                    <button class="calculator-btn" data-value="4">4</button>
+                    <button class="calculator-btn" data-value="5">5</button>
+                    <button class="calculator-btn" data-value="6">6</button>
+                    <button class="calculator-btn" data-value="*">*</button>
+                    <button class="calculator-btn" data-value="1">1</button>
+                    <button class="calculator-btn" data-value="2">2</button>
+                    <button class="calculator-btn" data-value="3">3</button>
+                    <button class="calculator-btn" data-value="-">-</button>
+                    <button class="calculator-btn" data-value="0">0</button>
+                    <button class="calculator-btn" data-value=".">.</button>
+                    <button class="calculator-btn" data-value="=">=</button>
+                    <button class="calculator-btn" data-value="+">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/case_1.js"></script>
+    <script src="./js/cases.js"></script>
+
+</body>
+
+</html>

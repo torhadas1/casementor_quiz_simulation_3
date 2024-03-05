@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Cases | Case 5</title>
+    <link rel="stylesheet" href="./style/case_7.css">
+    <link rel="stylesheet" href="./style/cases_general.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="item" id="invest">
+                        <a href="#" class="btn_active">Case Questions</a>
+                        <div class="smenu">
+                            <a href="#" class="target">Case 1</a>
+                            <a href="#" class="target">Case 2</a>
+                            <a href="#" class="target">Case 3</a>
+                            <a href="#" class="target">Case 4</a>
+                            <a href="#" class="btn_active">Case 5</a>
+                            <a href="#" class="target">Case 6</a>
+
+                        </div>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+
+            </div>
+        </div>
+        <!--main screen column-->
+        <div class="main_screen column">
+            <div class="question_container">
+                <h1> The following table shows the forecasted number of Felthorn Bushes,
+                    Lowland Pacas and Leopards in Year 6 to Year 8. Leopards eat Lowland
+                    Pacas, and Lowland Pacas in turn eat Felthorn Bushes.</h1>
+                <br>
+                <table>
+                    <tr>
+                        <th> </th>
+                        <th>Year 6</th>
+                        <th>Year 7</th>
+                        <th>Year 8</th>
+                    </tr>
+                    <tr>
+                        <td style="width : 150px;">Felthorn Bushes (B)</td>
+                        <td class="draggable" draggable="true">20</td>
+                        <td class="draggable" draggable="true">35</td>
+                        <td class="draggable" draggable="true">50</td>
+                    </tr>
+                    <tr>
+                        <td>Leopards (L)</td>
+                        <td class="draggable" draggable="true">5</td>
+                        <td class="draggable" draggable="true">8</td>
+                        <td class="draggable" draggable="true">10</td>
+
+                    </tr>
+                    <tr>
+                        <td>Lowland Pacas (P)</td>
+                        <td class="draggable" draggable="true">10</td>
+                        <td class="draggable" draggable="true">25</td>
+                        <td class="draggable" draggable="true">50</td>
+
+                    </tr>
+
+                </table>
+                <br>
+                Assume that in Year 6, an unknown and unexpected disease started
+                infecting Lowland Pacas, which reduces their population by <div class="draggable" draggable="true"
+                    style="display: inline;">50%</div> in
+                Year 7, and again in Year 8. This disease was not accounted for in the
+                forecast above.<br><br>
+                <div id="question_title">Question</div>
+                <p>Which equation best defines the new relationship between Felthorn
+                    Bushes, Lowland Pacas and Leopards in Year 8?<br>
+                </p>
+                <br>
+                <form>
+                    <radio>
+                        <label for="Case 5 a">
+                            <input type="radio" id="Case 5 a" name="case_3_radio" value="P = (3*B – 10*L)/4"
+                                style="margin-bottom: 10px;"> P = (3*B – 10*L)/4
+                        </label><br>
+                        <label for="Case_5_b" style="margin-bottom: 10px;"> <input type="radio" id="Case 5 b"
+                                name="case_3_radio" value="P = (2*B – 5*L)*0.5" style="margin-bottom: 10px;"> P = (2*B –
+                            5*L)*0.5 </label><br>
+                        <label for="Case_5_c" style="margin-bottom: 10px;"><input type="radio" id="Case 5 c"
+                                name="case_3_radio" value="P = (3*B – 10*L)/2" style="margin-bottom: 10px;"> P = (3*B –
+                            10*L)/2</label><br>
+                        <label for="Case_5_d" style="margin-bottom: 10px;"><input type="radio" id="Case 5 d"
+                                name="case_3_radio" value="P = (2*B – 5*L)*0.25" style="margin-bottom: 10px;"> P = (2*B
+                            –
+                            5*L)*0.25</label><br>
+
+                    </radio>
+
+                </form>
+
+            </div>
+            <button class="end_btn" onclick="showConfirmBox()">Next Case</button>
+
+            <div class="container_main_screen">
+                <div class="overlay" id="overlay" hidden>
+                    <div class="confirm-box">
+                        <h2 id="forward">Do you want to move to the next question?</h2><br>
+                        <p id="inside_confirm_p">You won’t be able to change your answer</p>
+                        <br>
+                        <button onclick="isConfirm(false)" class="confirm_btn">Back to question</button>
+                        <button onclick="location.href='case_6.html';" class="confirm_btn">Move forward</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right_screen column">
+        <div class="container">
+            <div class="calculator">
+                <div class="display">
+                    <input type="text" id="inputField" lang="en">
+                    <hr id="sep_line">
+                    <div id="result" class="draggable" draggable="true"> 0 </div>
+
+                </div>
+                <div class="buttons">
+                    <button class="calculator-btn items" data-value="AC">AC</button>
+                    <button class="calculator-btn items" data-value="(">(</button>
+                    <button class="calculator-btn items" data-value=")">)</button>
+                    <button class="calculator-btn items" data-value="C">C</button>
+                    <button class="calculator-btn" data-value="7">7</button>
+                    <button class="calculator-btn" data-value="8">8</button>
+                    <button class="calculator-btn" data-value="9">9</button>
+                    <button class="calculator-btn items" data-value="/">/</button>
+                    <button class="calculator-btn" data-value="4">4</button>
+                    <button class="calculator-btn" data-value="5">5</button>
+                    <button class="calculator-btn" data-value="6">6</button>
+                    <button class="calculator-btn items" data-value="*">*</button>
+                    <button class="calculator-btn" data-value="1">1</button>
+                    <button class="calculator-btn" data-value="2">2</button>
+                    <button class="calculator-btn" data-value="3">3</button>
+                    <button class="calculator-btn items" data-value="-">-</button>
+                    <button class="calculator-btn" data-value="0">0</button>
+                    <button class="calculator-btn" data-value=".">.</button>
+                    <button class="calculator-btn" data-value="=">=</button>
+                    <button class="calculator-btn items" data-value="+">+</button>
+                </div>
+            </div>
+        </div>
+        <script src="./js/case_1.js"></script>
+        <script src="./js/cases.js"></script>
+
+</body>
+
+</html>

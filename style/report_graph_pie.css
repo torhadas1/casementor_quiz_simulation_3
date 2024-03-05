@@ -1,0 +1,56 @@
+/* styles.css */
+.chart-container {
+  width: 500px;
+  height: 500px;
+
+  margin-left: 60px;
+  margin-bottom: -200px;
+
+}
+
+.input-container {
+  width: 17%;
+  margin-left: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 150px 60px 60px 60px 60px 60px;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.grid-container .header{
+  font-weight: bold;
+  text-align: center;
+  width: 20px;
+}
+
+.grid-container .row-header {
+  font-weight: bold;
+  text-align: left;
+  font-size: 20px;
+  width: 150px;
+
+
+}
+
+.input-container input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.input-container button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+#continuebutton {
+  position: relative;
+  margin-bottom: 15px;
+}
+

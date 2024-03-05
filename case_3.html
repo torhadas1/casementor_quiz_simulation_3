@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Cases | Case 3</title>
+    <link rel="stylesheet" href="./style/cases_general.css">
+    <link rel="stylesheet" href="./style/case_2.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="" id="invest">
+                        <a href="" class="btn_active">Case Questions</a>
+                        <div class="smenu">
+                            <a href="" class="target">Case 1</a>
+                            <a href="" class="target">Case 2</a>
+                            <a href="" class="btn_active">Case 3</a>
+                            <a href="" class="target">Case 4</a>
+                            <a href="" class="target">Case 5</a>
+                            <a href="" class="target">Case 6</a>
+
+                        </div>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+            </div>
+        </div>
+        <!--main screen column-->
+        <div class="main_screen column" style="width: 85%;">
+            <div class="question_container" style="margin-top: 30px;">
+                Aside from Kapulici Monkeys, Greentail Kagus also consume Ruby Bananas. Greentail Kagus inhabit
+                neighboring islands but
+                not the Ferrenghi Chain. However, in Year 6, Greentail Kagus began migrating to the Ferrenghi Chain in
+                search of food,
+                entering into direct competition with Kapulici Monkeys for Ruby Bananas. An initiative to plant
+                additional Ruby Banana trees
+                was implemented from Year 6 to Year 10.
+                <br>
+
+                <br>
+                <div id="the_question_title">Question <br><br></div>
+
+                <p id="the_question">What could be the best type of graph to visualize the impact of the Greentail Kagu
+                    migration on Kapulici Monkey
+                    population as well as the impact of the planting initiative on both populations? Pick only the
+                    option that makes the most
+                    sense.
+                </p><br>
+                <form id="Case 3">
+                    <label for="Case 3 a" style="margin-bottom: 10px;">
+                        <input type="radio" id="Case 3 a" name="case_3_radio" value="Bar graph of the Greentail Kagu and Kapulici Monkey populations and line graph of the total amount of Ruby 
+                        Bananas eaten in the Ferrenghi Chain"> Bar graph of the Greentail Kagu and Kapulici Monkey
+                        populations and line graph
+                        of the total amount of Ruby
+                        Bananas eaten in the Ferrenghi Chain
+                    </label>
+
+                    <label for="Case_3_b" style="margin-bottom: 10px;"> <input type="radio" id="Case 3 b"
+                            name="case_3_radio" value="Line graph of the Greentail Kagu and Kapulici Monkey populations and bar graph of the number of Ruby Banana 
+                        trees">
+                        Line graph of the Greentail Kagu and Kapulici Monkey populations and bar graph
+                        of the number of Ruby Banana
+                        trees</label><br>
+
+                    <label for="Case_3_c" style="margin-bottom: 10px;"><input type="radio" id="Case 3 c"
+                            name="case_3_radio" value="Line graph of the Greentail Kagu and Kapulici Monkey populations and bar graph of the total amount of Ruby 
+                        Bananas eaten in the Ferrenghi Chain"> Line graph of the Greentail Kagu and Kapulici Monkey
+                        populations and bar graph
+                        of the total amount of Ruby
+                        Bananas eaten in the Ferrenghi Chain</label><br>
+
+                    <label for="Case_3_d" style="margin-bottom: 10px;"><input type="radio" id="Case 3 d"
+                            name="case_3_radio" value="Bar graph showing the relative populations of Greentail Kagu and Kapulici Monkey and line graph of the number of 
+                        Ruby Banana trees"> Bar graph showing the relative populations of Greentail Kagu and Kapulici
+                        Monkey and line graph of the number of
+                        Ruby Banana trees</label><br>
+
+                </form>
+                <div> <button class="end_btn" onclick="showConfirmBox()">Next Case</button>
+                </div>
+            </div>
+            <div class="container_main_screen">
+                <div class="overlay" id="overlay" hidden>
+                    <div class="confirm-box">
+                        <h2 id="forward">Do you want to move to the next question?</h2><br>
+                        <p id="inside_confirm_p">You won’t be able to change your answer</p>
+                        <br>
+                        <button onclick="isConfirm(false)" class="confirm_btn">Back to question</button>
+                        <button onclick="location.href='case_4.html';" class="confirm_btn">Move forward</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="right_screen" id="case_three">
+        <div class="container"></div>
+        Research Journal
+        <hr>
+    </div> -->
+    </div>
+    <script src="./js/case_2.js"></script>
+    <script src="./js/cases.js"></script>
+
+</body>
+
+</html>

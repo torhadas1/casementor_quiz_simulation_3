@@ -1,0 +1,712 @@
+/*build the roots to the colors*/
+:root {
+    --stone: #38464b;
+    --nav_blue: #a1a9b7;
+    --black_green: #013220;
+    --capiton: #fff;
+    --boring_silver: rgba(154, 185, 188, 0.8);
+    --just_black: #000000;
+    --outer: #333f50;
+    --inner: #222a35;
+}
+
+.body {
+    max-width: 1500px;
+    max-height: 640px;
+}
+
+/* the whole page css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--outer);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+    color: var(--capiton);
+    font-weight: 320;
+
+}
+
+#research_info_title,
+#study {
+    font-weight: bold;
+}
+
+.the_main_text {
+    background-color: var(--inner);
+}
+
+/* make the columns look aligned*/
+.column {
+    float: left;
+    text-align: center;
+}
+
+.left {
+    width: 7%;
+    margin-left: 15px;
+}
+
+.main_screen {
+    width: 60%;
+    margin-left: 50px;
+    border-left: 15px solid rgb(226, 226, 255);
+    border-top: 3px solid rgb(226, 226, 255);
+    border-bottom: 3px solid rgb(226, 226, 255);
+    border-right: 15px solid rgb(226, 226, 255);
+    height: 100vh;
+    background-color: var(--inner) !important;
+}
+
+.inner_ul {
+    background-color: var(--inner);
+    margin-left: 20px;
+
+}
+
+.inner_list {
+    padding-left: 20px;
+    background-color: var(--inner);
+}
+
+/*the main screen */
+.container_main_screen {
+    text-align: left;
+    margin-top: 20px;
+    margin-right: 20px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: var(--inner) !important;
+    height: 95vh;
+}
+
+#objective {
+    background-color: var(--inner);
+}
+
+.main_screen .container {
+    background-color: var(--inner);
+}
+
+/*main screen scrollbar*/
+.container_main_screen::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--inner);
+}
+
+.container_main_screen::-webkit-scrollbar-thumb {
+    background-color: var(--capiton);
+    height: 20px;
+}
+
+/*build the menu style*/
+.menu {
+    width: 170px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/*the menu buttons*/
+.btn {
+    display: block;
+    border-radius: 10px;
+    border: 2px solid var(--just_black);
+    padding: 4px 7px;
+    background-color: #edf4ff;
+    color: var(--just_black);
+    text-decoration: none;
+    position: relative;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#written {
+    margin-left: 60px;
+}
+
+.btn_active::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #17c0eb;
+    left: 20px;
+    display: none;
+}
+
+.btn i {
+    margin-right: 10px;
+}
+
+.btn_active {
+    display: block;
+    padding: 4px 7px;
+    background-color: #8497b0;
+    color: var(--capiton);
+    text-decoration: none;
+    position: relative;
+    border: 2px solid var(--just_black);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/*the sub-menu buttons*/
+.smenu {
+    background-color: var(--outer);
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+    padding: 2px 2px;
+    margin-left: 10px;
+    max-height: 100%;
+}
+
+.smenu a {
+    display: block;
+    text-decoration: none;
+    padding: 6px 18px;
+    border-radius: 10px;
+    background-color: var(--nav_blue);
+    font-size: 16px;
+    color: var(--just_black);
+    margin: 4px 0;
+    position: relative;
+    border: 2px solid var(--just_black);
+}
+
+.smenu a:hover::before {
+    opacity: 1;
+}
+
+.smenu a:hover {
+    color: var(--capiton);
+}
+
+.item:target .smenu {
+    max-height: 10em;
+    font-weight: bold
+}
+
+/*the Research journal*/
+.right_screen {
+    border: solid 3px rgb(226, 226, 255);
+    border-right: solid 10px rgb(226, 226, 255);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--inner) !important;
+    padding: 20px 20px;
+    width: 25%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 10px;
+    margin-top: 0px;
+}
+
+.journal_container {
+    background-color: var(--inner) !important;
+}
+
+
+
+/*right screen scrollbar */
+.right_screen::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--inner);
+}
+
+.right_screen::-webkit-scrollbar-thumb {
+    background-color: var(--capiton);
+    height: 20px;
+}
+
+
+.overlay {
+    border-radius: 10px;
+    background-color: var(--capiton);
+    color: var(--just_black);
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: fixed;
+    z-index: 1000;
+}
+
+.confirm-box {
+    border: 1px solid var(--capiton);
+    border-radius: 10px;
+    position: absolute;
+    width: 600px;
+    height: fit-content;
+    top: 25%;
+    left: 25%;
+    padding: 20px 15px;
+    text-align: center;
+    background: var(--outer);
+    z-index: 1001;
+}
+
+#clearStorage {
+    position: relative;
+    left: 0;
+    bottom: 20px;
+    margin-left: 30px;
+    float: right;
+    z-index: 1000;
+    height: fit-content;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-width: 3px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 12px;
+    background-color: #d40000;
+    color: white;
+    position: absolute;
+    font-weight: 500;
+}
+
+.main_screen .end_btn {
+    font-size: 20px;
+    padding: 5px 12px;
+    background-color: var(--capiton);
+    color: var(--just_black);
+    position: relative;
+    float: right;
+    font-weight: 500;
+    margin-top: 20px;
+    border-radius: 10px;
+    border-color: rgb(179, 187, 255);
+    border-width: 3px;
+    cursor: pointer;
+    background-color: #d6dce5;
+    z-index: 1000;
+    height: fit-content;
+}
+
+#inside_confirm_p {
+    margin-bottom: 40px;
+    text-align: center;
+    float: left;
+
+    font-weight: 200;
+    background: var(--outer)
+}
+
+
+#forward {
+    background: var(--outer);
+    font-weight: 500;
+}
+
+.confirm_btn {
+    color: var(--just_black);
+    background-color: #d6dce5;
+    border-radius: 10px;
+    border-color: rgb(179, 187, 255);
+    border-width: 3px;
+    border-radius: 10px;
+    margin-top: 50px;
+    font-weight: 400;
+    padding: 2px 5px;
+    margin: 20px;
+}
+
+
+/*change the scroll bar*/
+#objective {
+    margin-left: 50px;
+}
+
+#first_exhibit {
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+#second_exhibit {
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.island {
+    position: relative;
+    display: inline-block;
+}
+
+.chart {
+    position: relative;
+    display: inline-block;
+}
+
+.island img {
+    width: 100%;
+    /* Adjust as needed */
+    height: auto;
+}
+
+.chart img {
+    width: 100%;
+    /* Adjust as needed */
+    height: auto;
+}
+
+.island .draggable,
+.island .afterDrag {
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    top: 10%;
+    left: 41%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 27px;
+    /* Add other styles as needed */
+}
+
+.chart .draggable,
+.chart .afterDrag {
+    position: absolute;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    top: 10%;
+    left: 41%;
+    transform: translate(-50%, -50%);
+    width: 27px;
+    height: 27px;
+
+    /* Add other styles as needed */
+}
+
+.island #exhibit_draggable1 {
+    top: 22.2%;
+    left: 18.7%;
+    width: 45px;
+    height: 24px;
+    font-size: 16px;
+}
+
+.island #exhibit_draggable2 {
+    top: 22.2%;
+    left: 31.2%;
+    width: 45px;
+    height: 23px;
+    font-size: 16px;
+
+}
+
+.island #exhibit_draggable3 {
+    top: 31%;
+    left: 54.4%;
+    width: 45px;
+    height: 23px;
+    font-size: 16px;
+
+}
+
+.island #exhibit_draggable4 {
+    top: 31%;
+    left: 66.7%;
+    width: 45px;
+    height: 23px;
+    font-size: 16px;
+
+}
+
+.island #exhibit_draggable5 {
+    top: 40%;
+    left: 12.5%;
+    width: 45px;
+    height: 23px;
+    font-size: 16px;
+}
+
+.island #exhibit_draggable6 {
+    top: 40%;
+    left: 24.6%;
+    width: 45px;
+    height: 23px;
+    font-size: 16px;
+}
+
+.island #exhibit_draggable7 {
+    top: 57%;
+    left: 26%;
+    width: 45px;
+    height: 23px;
+    font-size: 16px;
+}
+
+.island #exhibit_draggable8 {
+    top: 57%;
+    left: 38.2%;
+    width: 45px;
+    height: 23px;
+    font-size: 16px;
+}
+
+.chart #exhibit2_draggable1 {
+    top: 12.1%;
+    left: 12.8%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable2 {
+    top: 12.1%;
+    left: 17.3%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable3 {
+    top: 20%;
+    left: 21.4%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable4 {
+    top: 29%;
+    left: 25.5%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable5 {
+    top: 25%;
+    left: 35.2%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable6 {
+    top: 25.5%;
+    left: 40%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable7 {
+    top: 32.5%;
+    left: 44%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable8 {
+    top: 39.5%;
+    left: 48.1%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable9 {
+    top: 17%;
+    left: 58.3%;
+    font-size: 14px;
+    height: 20px;
+    width: 40;
+}
+
+.chart #exhibit2_draggable10 {
+    top: 20%;
+    left: 62.5%;
+    width: 40;
+
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable11 {
+    top: 23.4%;
+    left: 66.5%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable12 {
+    top: 37.5%;
+    left: 70.7%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable13 {
+    top: 37.5%;
+    left: 81%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable14 {
+    top: 40.5%;
+    left: 85%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable15 {
+    top: 42%;
+    left: 89.2%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.chart #exhibit2_draggable16 {
+    top: 45.2%;
+    left: 93.3%;
+    font-size: 14px;
+    height: 20px;
+}
+
+.right_screen #second_exhibit {
+    height: 100vh;
+    margin-left: 50px;
+}
+
+#study {
+    height: 100vh;
+    margin-left: 50px;
+}
+
+
+.contianer_drag {
+    background-color: var(--inner);
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.draggable,
+.draggable_widget,
+.sortable {
+    background-color: var(--capiton);
+    color: var(--just_black);
+    border: 1px var(--just_black);
+    border-style: dashed;
+    cursor: move;
+    width: fit-content;
+
+}
+
+.right_screen ui-sortable {
+    gap: 20px;
+}
+
+.right_screen .draggable {
+    margin: 10px;
+    border: 0px;
+    width: fit-content;
+    background-color: var(--capiton);
+    color: var(--just_black);
+    border: 1px var(--just_black);
+}
+
+.sortable .title {
+    background-color: var(--inner);
+}
+
+.right_screen .div {
+    background-color: var(--inner);
+
+}
+
+.right_screen .sortable {
+    margin: 10px;
+    border: 0px;
+    width: fit-content;
+    background-color: var(--capiton);
+    color: var(--just_black);
+    border: 1px var(--just_black);
+}
+
+
+.afterDrag {
+    background-color: var(--just_black);
+    color: grey;
+    border: 1px solid grey;
+    cursor: move;
+    width: 50%;
+    width: 100%;
+    text-align: left;
+}
+
+.right_screen .afterDrag {
+    margin: 10px;
+    border: 0px;
+    width: fit-content;
+    background-color: var(--capiton);
+    color: var(--just_black);
+    border: 1px var(--just_black);
+}
+
+.draggable.dragging {
+    opacity: 0.5;
+}
+
+#objective_line {
+    display: inline;
+    position: relative;
+}
+
+.study_drag {
+    display: inline;
+    position: relative;
+}
+
+#myChart {
+    margin: 50px;
+    width: 100%;
+    max-width: 700px;
+    background-color: var(--capiton);
+}
+
+.journal_container {
+    background-color: var(--inner);
+}
+
+.draggable .title {
+    background-color: var(--inner);
+}
+
+.draggable .text {
+    color: var(--inner);
+}
+
+.remove {
+    position: absolute;
+    top: -2px;
+    right: 0;
+    right: -20px;
+}
+
+.timer {
+    text-align: center;
+    margin: 5px;
+}
+
+
+
+.sortable .remove {
+    position: absolute;
+    top: -2px;
+    right: 0;
+    right: -20px;
+}
+
+.dragging .title {
+    width: 1px;
+    height: 1px;
+    font-size: 1px;
+}

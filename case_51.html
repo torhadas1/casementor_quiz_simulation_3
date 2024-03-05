@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Cases | Case 5</title>
+    <link rel="stylesheet" href="./style/case_6.css">
+    <link rel="stylesheet" href="./style/cases_general.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="item" id="invest">
+                        <a href="#" class="btn_active">Case Questions</a>
+                        <div class="smenu">
+                            <a href="#" class="target">Case 1</a>
+                            <a href="#" class="target">Case 2</a>
+                            <a href="#" class="target">Case 3</a>
+                            <a href="#" class="target">Case 4</a>
+                            <a href="#" class="btn_active">Case 5</a>
+                            <a href="#" class="target">Case 6</a>
+
+                        </div>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+
+            </div>
+        </div>
+        <!--main screen column-->
+        <div class="main_screen column">
+            <div class="question_container">
+                <br>
+                <h1> The team of ecologists have completed an analysis of the amount of new Polvian Konik horses
+                    entering the Peatkey Reserve during Year 6.</h1>
+                <br>
+                <table>
+                    <tr>
+                        <th> </th>
+                        <th style="font-weight: bold;">Summer</th>
+                        <th style="font-weight: bold;">Fall</th>
+                        <th style="font-weight: bold;">Winter</th>
+                        <th style="font-weight: bold;">Spring</th>
+
+                    </tr>
+                    <tr>
+                        <td>Mobeky</td>
+                        <td>94</td>
+                        <td>98 </td>
+                        <td>105</td>
+                        <td>119</td>
+
+                    </tr>
+                    <tr>
+                        <td>Luntsky</td>
+                        <td>42</td>
+                        <td>45</td>
+                        <td>37</td>
+                        <td>53</td>
+
+                    </tr>
+                    <tr>
+                        <td>Koyavt</td>
+                        <td>39</td>
+                        <td>35</td>
+                        <td>33</td>
+                        <td>41</td>
+
+                    </tr>
+                    <tr>
+                        <td>Lohnst</td>
+                        <td>42</td>
+                        <td>36</td>
+                        <td>29 </td>
+                        <td>38</td>
+
+                    </tr>
+                </table>
+                <br>
+                <div class="question_title">Question</div>
+                <br>
+                <p>For which statement can the data provided be used as evidence for the different seasons of Y6? You
+                    can
+                    select more than one statement
+                </p>
+                <br>
+                <form>
+                    <input class="checkbox" type="checkbox" name="case_5_one" id="Case 5 a"
+                        value="Mobeky has the largest Konik horse population">
+                    <label for="one">Mobeky has the largest Konik horse population</label>
+                    <br>
+                    <input class="checkbox" type="checkbox" name="case_5_two" id="Case 5 b"
+                        value="Koyavt represents the Polvian port with the fewest number of shipment departures">
+                    <label for="two">Koyavt represents the Polvian port with the fewest number of shipment
+                        departures</label>
+                    <br>
+                    <input class="checkbox" type="checkbox" name="case_5_three" id="Case 5 c"
+                        value="Spring represents the season in which most Konik horses departed from Polvia">
+                    <label for="three">Spring represents the season in which most Konik horses departed from
+                        Polvia</label>
+                    <br>
+                    <input class="checkbox" type="checkbox" name="case_5_four" id="Case 5 d" value="None of the above">
+                    <label for="four">None of the above</label>
+                    <br>
+
+                </form>
+                <div> <button class="end_btn" onclick="showConfirmBox()">Next Case</button>
+                </div>
+            </div>
+            <div class="container_main_screen">
+                <div class="overlay" id="overlay" hidden>
+                    <div class="confirm-box">
+                        <h2 id="forward">Do you want to move to the next question?</h2><br>
+                        <p id="inside_confirm_p">You won’t be able to change your answer</p>
+                        <br>
+                        <button onclick="isConfirm(false)" class="confirm_btn">Back to question</button>
+                        <button onclick="location.href='case_6.html';" class="confirm_btn">Move forward</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/calculator.js"></script>
+    <script src="./js/cases.js"></script>
+
+</body>
+
+</html>

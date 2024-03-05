@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigation</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="item" id="invest">
+                        <a href="#invest" class="btn_active">Investigation</a>
+                        <div class="smenu">
+                            <a href="#objective" class="target">Objective</a>
+                            <a href="#first_exhibit" class="target">Exhibit 1</a>
+                            <a href="#second_exhibit" class="target">Exhibit 2</a>
+                            <a href="#study">Study</a>
+                        </div>
+                    </li>
+                    <li class="item" id="analysis">
+                        <a onclick="PressAnalysisButtonToLocalStorage()" class="btn">Analysis</a>
+                    </li>
+                    <li class="item" id="report">
+                        <a href="#" class="btn">Report</a>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+            </div>
+        </div>
+        <!--main screen column-->
+        <div class="main_screen column">
+            <div class="container_main_screen">
+                <div class="overlay" id="overlay" hidden>
+                    <div class="confirm-box">
+                        <h2 id="forward">Do you want to move forward?</h2><br>
+                        <p id="inside_confirm_p">If you have collected all the relevant information
+                            you can now move to the Analysis phase.</p>
+                        <button onclick="isConfirm(false)" class="confirm_btn">Back to Investigation</button>
+                        <button onclick="SaveToLocalStorage()" class="confirm_btn">Move
+                            to
+                            Analysis</button>
+                    </div>
+                </div>
+
+                <div id="objective" class=container>
+
+                    <div id="research_info_title" class=container>Research Information</div><br>
+                    <div class="the_main_text">You recently joined a wildlife NGO focused on protecting Kapulici
+                        Monkeys, an endangered species only found on 4 islands near the
+                        coast of South America. On your first day, you receive data regarding
+                        the Kapulici Monkeys that inhabit the Ferrenghi Island Chain. </div>
+                    <br>
+                    <div class="draggable" id="objective_line" data-title="Goal">OBJECTIVE: Understand if the banana
+                        planting and anaconda
+                        relocation programs will help the Kapulici Monkey population reach
+                        the previous levels of Year 1 in Rendang and Nangi Island.
+                    </div>
+
+                </div>
+                <div id="first_exhibit" class="container">
+                    <br> Exhibit 1: Anacondas & Ruby Banana Trees in the Island Chain – Year 4
+                    <div class="island">
+                        <img src="./img/Exhibit 1.png" alt="the island">
+                        <div class="draggable" id="exhibit_draggable1" data-title="Anacondas in Rendang Island">
+                            11
+                        </div class=container>
+                        <div class="draggable" id="exhibit_draggable2" data-title="Banana trees in Rendang Island">40
+                        </div>
+                        <div class="draggable" id="exhibit_draggable3" data-title="Anacondas in Feruni Island">10</div>
+                        <div class="draggable" id="exhibit_draggable4" data-title="Banana trees in Feruni Island">41
+                        </div>
+                        <div class="draggable" id="exhibit_draggable5" data-title="Anacondas in Manggis Island">
+                            8
+                        </div class=container>
+                        <div class="draggable" id="exhibit_draggable6" data-title="Banana trees in Manggis Island">33
+                        </div>
+                        <div class="draggable" id="exhibit_draggable7" data-title="Anacondas in Nangi Island">9</div>
+                        <div class="draggable" id="exhibit_draggable8" data-title="Banana trees in Nangi Island">28
+                        </div>
+                    </div>
+                </div>
+                <div id="second_exhibit" class="container">
+                    Exhibit 2: Kapulici Monkey Population Across Islands (Years 1-4)
+                    <div class="chart">
+                        <img src="./img/Exhibit 2.png" alt="the chart">
+                        <div class="draggable" id="exhibit2_draggable1" data-title="Kapulici Monkeys in Rendang 
+                        Island, Y1">356
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable2" data-title="Kapulici Monkeys in Rendang 
+                        Island, Y2">355
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable3" data-title="Kapulici Monkeys in Rendang 
+                        Island, Y3">312
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable4" data-title="Kapulici Monkeys in Rendang 
+                        Island, Y4">261
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable5" data-title="Kapulici Monkeys in Feruni
+                        Island, Y1">284</div>
+                        <div class="draggable" id="exhibit2_draggable6" data-title="Kapulici Monkeys in Feruni
+                        Island, Y2">281</div>
+                        <div class="draggable" id="exhibit2_draggable7" data-title="Kapulici Monkeys in Feruni
+                        Island, Y3">243
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable8" data-title="Kapulici Monkeys in Feruni
+                        Island, Y4">206</div>
+                        <div class="draggable" id="exhibit2_draggable9" data-title="Kapulici Monkeys in Manggis 
+                        Island, Y1">329</div>
+                        <div class="draggable" id="exhibit2_draggable10" data-title="Kapulici Monkeys in Manggis 
+                        Island, Y2">314
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable11" data-title="Kapulici Monkeys in Manggis 
+                        Island, Y3">294
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable12" data-title="Kapulici Monkeys in Manggis 
+                        Island, Y4">217
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable13" data-title="Kapulici Monkeys in Nangi
+                        Island, Y1">215
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable14" data-title="Kapulici Monkeys in Nangi
+                        Island, Y2">199
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable15" data-title="Kapulici Monkeys in Nangi
+                        Island, Y3">191
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable16" data-title="Kapulici Monkeys in Nangi
+                        Island, Y4">173
+                        </div>
+                    </div>
+                </div>
+                <div id="study" class="container">
+
+                    Ferrenghi Island Chain Information
+                    <div class="container"><br>
+                        In order to ensure that the Kapulici Monkeys do not go extinct in the
+                        Ferrenghi Island Chain, your NGO aims to bring the Kapulici
+                        population in each main island back to Year 1 levels
+                        <div class="draggable study_drag" id="monkeys_for_haeyenas" draggable="true"
+                            data-title="Timeline to achieve goal">by the end of Year 5</div>.
+                        Due to the islands in the Ferrenghi Island Chain being separated by
+                        the ocean, <div class="draggable study_drag" id="haeyanas_for_monkeys" draggable="true"
+                            data-title="Restriction #1">inter-island movement is impossible
+                        </div>.<div class="draggable study_drag" id="for_monkeys" draggable="true"
+                            data-title="Restriction #2">Relocation efforts by humans are not possible
+                        </div>
+                        to avoid breaking up Kapulici
+                        families. <br><br>
+                        The 3 main species on the island chain are: Kapulici Monkeys, Stripped
+                        Anacondas, and Bushy Capybaras. The primary food source of
+                        Stripped Anacondas are
+                        <div class="draggable study_drag" draggable="true" id="2_dragable" data-title="Food source of Stripped
+                            Anacondas">Bushy Capybaras </div>
+                        ; unfortunately, a <br>
+                        <div class="draggable study_drag" draggable="true" id="evolution" data-title="Evolution of Bushy Capybara 
+                            population">disease from Year 2 has decimated the Bushy Capybara population</div>,thereby
+                        <div class="draggable study_drag" draggable="true" id="2___dragable" data-title="Change in Stripped Anaconda 
+                        eating habits">forcing Stripped Anacondas to hunt more Kapulici Monkeys </div>
+                        .<br> By analyzing the population data for these 2 species, it was
+                        determined that, on average, a Stripped Anaconda consumes <br>
+                        <div class="draggable study_drag" id="ratio" draggable="true" data-title="Stripped Anaconda 
+                                consumption"> 1 Kapulici Monkey a month in Rendang island</div>.<br> This varies island
+                        by
+                        island given varying Capybara populations, with
+                        the ratio Rendang Island : Feruni Island : Manggis Island : Nangi Island
+                        being
+                        <div class="draggable study_drag" draggable="true" data-title="Ratio of Kapulici Monkeys eaten 
+                                in Rendang Island : Feruni
+                                Island : Manggis Island : Nangi
+                                Island" id="banana_trees_evolution">
+                            1: 1.2 : 2 : 1.5</div>
+                        <br><br>
+                        Kapulici Monkeys are a relatively short-lived species with an average
+                        lifespan of just
+                        <div class="draggable study_drag" draggable="true" data-title="Average Kapulici Monkey 
+                                lifespan" id="average_monkey_lifespan"> 10 years
+                        </div>.Historically, the Kapulici Monkey population
+                        on the Ferrenghi Chain have been
+                        <div class="draggable study_drag" draggable="true" data-title="Kapulici Monkey demographics"
+                            id="monkey_demographic"> evenly split gender-wise
+                        </div>.<br>
+                        <div class="draggable study_drag" draggable="true" data-title="Kapulici Monkeys that mate 
+                                    each year" id="monkey_mating"> Five-sixths of females
+                        </div> will mate in a given year, giving birth to an <div class="draggable study_drag"
+                            draggable="true" data-title="New Kapulici Monkey births" id="monkey_aveage_baby">
+                            average of 1.5 babies annually
+                        </div> . Nonetheless, this is <br>
+                        <div class="draggable study_drag" draggable="true" data-title="Limits on Kapulici Monkey 
+                            population" id="monkey_constrained"> constrained by availability of food
+                        </div>. <br><br>
+                        Kapulici Monkeys are picky eaters – they only consume Ruby Bananas.
+                        <div class="draggable study_drag" draggable="true" data-title="Relationship between Ruby 
+                            Banana trees and Kapulici 
+                            Monkeys" id="relationship_banana"> 1 Ruby Banana trees can sustain a population of 8
+                            Kapulici Monkeys
+                        </div>.Unfortunately, the number of Ruby Banana trees have also declined in
+                        recent years for unknown reasons.<br><br>
+                        Accordingly, your NGO has defined the following activities to be
+                        completed after the end of Year 4:
+                    </div>
+                    <ul class="inner_ul" style="list-style-type: disc;">
+                        <li class="inner_list">
+                            <div class="draggable study_drag" draggable="true" id="activity_chocolate"
+                                data-title="Activity #1 to be completed end of year 4">
+                                Relocate 8 Anacondas from each island to nearby islands outside
+                                the Ferrenghi Island Chain with more abundant food sources
+                            </div>
+                        </li>
+                        <li class="inner_list">
+                            <div class="draggable study_drag" draggable="true" id="activity_chocolate1"
+                                data-title="Activity #2 to be completed end of year 4">
+                                Move 8 Ruby Banana trees in Rendang Island
+
+                            </div>
+                        </li>
+                        <li class="inner_list">
+                            <div class="draggable study_drag" draggable="true" id="activity_chocolate2"
+                                data-title="Activity #3 to be completed end of year 4">
+                                Move 5 Ruby Banana trees in Feruni Island
+                            </div>
+                        </li>
+                        <li class="inner_list">
+                            <div class="draggable study_drag" draggable="true" id="activity_chocolate3"
+                                data-title="Activity #4 to be completed end of year 4">
+                                Move 11 Ruby Banana trees in Manggis Island
+                            </div>
+                        </li>
+                    </ul>
+
+                    <br>
+
+                    <div>
+                        <button class="end_btn" onclick="showConfirmBox()">Complete Investigation</button>
+                    </div>
+                    <div class="container"> <br><br><br></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="right_screen" id="journal_container">
+            <div class="journal_container" contenteditable="true">
+                Research Journal
+                <hr>
+            </div>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
