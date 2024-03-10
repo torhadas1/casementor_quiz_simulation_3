@@ -101,3 +101,5 @@ document.getElementById("downloadCSV").addEventListener("click", function () {
     link.click();
     document.body.removeChild(link);
 });
+
+localStorage.clear();

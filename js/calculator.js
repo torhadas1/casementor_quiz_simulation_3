@@ -115,7 +115,7 @@ $(document).ready(function () {
         let dataTitle = ui.helper.attr('data-title');
         let otherTitle = ui.helper.attr('title');
         // get the value by replacing the data-title from totalValue
-        let value = totalValue.replace(dataTitle, '').replace('X', '').replace(/[^0-9.%]/g, '').trim();
+        let value = totalValue.replace(dataTitle, '').replace('X', '').replace(/[^0-9.%-]/g, '').trim();
         if (value.includes("%")) {
           // Replace % with an empty string, convert to number and divide by 100
           value = Number(value.replace("%", "")) / 100;

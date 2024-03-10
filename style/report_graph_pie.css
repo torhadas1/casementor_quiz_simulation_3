@@ -15,7 +15,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 150px 60px 60px 60px 60px 60px;
+  grid-template-columns: 150px 60px 60px 60px 60px 80px;
   gap: 5px;
   align-items: center;
   margin-bottom: 10px;

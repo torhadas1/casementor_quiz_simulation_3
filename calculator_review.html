@@ -23,7 +23,7 @@
             <div class="menu">
                 <ul>
                     <li class="item" id="invest">
-                        <a href='index.html' class="btn">Investigation</a>
+                        <a onclick="SaveToLocalStorage()" href='index.html' class="btn">Investigation</a>
                         <div class="smenu">
                         </div>
                     </li>
@@ -33,6 +33,7 @@
                             <a href=''>Question 1</a>
                             <a href=''>Question 2</a>
                             <a href=''>Question 3</a>
+                            <a href=''>Question 4</a>
                             <a href='calculator_review.html' class="btn_active">Review</a>
                         </div>
                     </li>
@@ -105,8 +106,8 @@
             <div><button class="end_btn" onclick="showConfirmBox()">Conclude</button></div>
 
         </div>
-        <div class="right_screen">
-            <div class="journal_container" id="Journal_container">
+        <div class="right_screen" id="Journal_container">
+            <div class="journal_container">
                 <h2>Research Journal</h2>
                 <hr>
             </div>
