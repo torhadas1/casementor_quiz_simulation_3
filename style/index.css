@@ -378,13 +378,15 @@
 .chart .afterDrag {
     position: absolute;
     text-align: center;
+    padding-top: 2px;
     font-size: 18px;
     font-weight: bold;
-    top: 10%;
-    left: 41%;
+    /* top: 10%;
+    left: 41%; */
     transform: translate(-50%, -50%);
-    width: 27px;
-    height: 27px;
+    /* width: 27px;
+    height: 27px; */
+    margin: auto;
 
     /* Add other styles as needed */
 }
@@ -462,6 +464,7 @@
     font-size: 18px;
     height: 32px;
     width: 60px;
+    vertical-align: middle;
 }
 
 .chart #exhibit2_draggable2 {
@@ -470,6 +473,8 @@
     font-size: 18px;
     height: 32px;
     width: 60px;
+    text-align-last: center;
+
 }
 
 .chart #exhibit2_draggable3 {
