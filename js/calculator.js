@@ -112,15 +112,17 @@ $(document).ready(function () {
       accept: ".draggable, .sortable",
       drop: function (event, ui) {
         let totalValue = ui.helper.text();
+        dataValue = ui.helper.attr('data-value');
         let dataTitle = ui.helper.attr('data-title');
         let otherTitle = ui.helper.attr('title');
         // get the value by replacing the data-title from totalValue
-        let value = totalValue.replace(dataTitle, '').replace('X', '').replace(/[^0-9.%-]/g, '').trim();
+        let value = dataValue.replace(/[^0-9.%-]/g, '').trim();
         if (value.includes("%")) {
           // Replace % with an empty string, convert to number and divide by 100
           value = Number(value.replace("%", "")) / 100;
         }
         $(this).val(value);
+        
       }
     });
   })
@@ -131,10 +133,11 @@ $(document).ready(function () {
       accept: ".draggable, .sortable",
       drop: function (event, ui) {
         let totalValue = ui.helper.text();
+        let dataValue = ui.helper.attr('data-value');
         let dataTitle = ui.helper.attr('data-title');
         let otherTitle = ui.helper.attr('title');
         // get the value by replacing the data-title from totalValue
-        let value = totalValue.replace(dataTitle, '').replace('X', '').replace(/[^0-9.%]/g, '').trim();
+        let value = dataValue.replace(/[^0-9.%-]/g, '').trim();
 
         if (value === "AC") {
           $(this).val('');
@@ -164,6 +167,7 @@ $(document).ready(function () {
           // If the last character is a math sign, append the value instead of replacing
           if (lastChar === '+' || lastChar === '-' || lastChar === '*' || lastChar === ')' || lastChar === '(' || lastChar === '/') {
             $(this).val($(this).val() + value);
+            
           } else {
             $(this).val(value);
           }
@@ -294,14 +298,21 @@ $(document).ready(function () {
             }
           }
           $('#inputField').val(formattedResult);
-
           $('#result').text(formattedResult);
+          $('#result').attr('data-value', formattedResult);
+          $('#inputField').attr('data-value', formattedResult);
+
+          // // Update the data-value attribute of the draggable element
+          // var draggableElements = $('.draggable, .sortable');
+          // draggableElements.each(function () {
+          //   $(this).attr('data-value', formattedResult);});
         }
       } catch (error) {
         alert('Invalid Expression');
       }
     } else {
       $('#inputField').val($('#inputField').val() + value);
+      $('#inputField').attr('data-value', $('#inputField').val() + value);
     }
   }
   $(document).on('click', '.remove', function () {
@@ -418,7 +429,7 @@ document.getElementById('continueButton').addEventListener('click', function () 
   var radios = document.getElementsByName('page');
   for (var i = 0, length = radios.length; i < length; i++) {
     if (radios[i].checked) {
-      localStorage.setItem('5. graph_type', radios[i].id)
+      localStorage.setItem('6. graph_type', radios[i].id)
       window.location.href = radios[i].value;
       break;
     }

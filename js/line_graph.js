@@ -227,8 +227,8 @@ var myChart = new Chart(ctx, {
 });
 
 function updateChart() {
-    var value1 = document.getElementById('6. Graph - Rendang Island Y5').value || 0;
-    var value2 = document.getElementById('6. Graph - Nangi Island Y5').value || 0;
+    var value1 = document.getElementById('7. Graph - Rendang Island Y5').value || 0;
+    var value2 = document.getElementById('7. Graph - Nangi Island Y5').value || 0;
 
     myChart.data.datasets[0].data = [356, 355, 312, 261, value1];
     myChart.data.datasets[1].data = [215, 199,191,173,value2];
@@ -237,8 +237,8 @@ function updateChart() {
 
 
 // Add input event listeners to all input fields
-document.getElementById('6. Graph - Rendang Island Y5').addEventListener('input', updateChart);
-document.getElementById('6. Graph - Nangi Island Y5').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Rendang Island Y5').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Nangi Island Y5').addEventListener('input', updateChart);
 
 $(document).on('click', '.remove', function () {
     $(this).parent().next('hr').remove();

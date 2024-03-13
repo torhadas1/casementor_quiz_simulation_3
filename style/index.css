@@ -341,17 +341,20 @@
 .island {
     position: relative;
     display: inline-block;
+    background-color: var(--inner);
 }
 
 .chart {
     position: relative;
     display: inline-block;
+    background-color: var(--inner);
+
 }
 
 .island img {
     width: 100%;
     /* Adjust as needed */
-    height: auto;
+    /* height: auto; */
 }
 
 .chart img {
@@ -394,16 +397,16 @@
 .island #exhibit_draggable1 {
     top: 22.5%;
     left: 18.7%;
-    width: 40px;
-    height: 23px;
+    width: 41px;
+    height: 24px;
     font-size: 16px;
 }
 
 .island #exhibit_draggable2 {
     top: 22.6%;
     left: 31.2%;
-    width: 40px;
-    height: 23px;
+    width: 41px;
+    height: 24px;
     font-size: 16px;
 
 }
@@ -411,8 +414,8 @@
 .island #exhibit_draggable3 {
     top: 31.2%;
     left: 54.4%;
-    width: 40px;
-    height: 23px;
+    width: 41px;
+    height: 24px;
     font-size: 16px;
 
 }
@@ -420,8 +423,8 @@
 .island #exhibit_draggable4 {
     top: 31%;
     left: 66.8%;
-    width: 40px;
-    height: 23px;
+    width: 41px;
+    height: 24px;
     font-size: 16px;
 
 }
@@ -429,32 +432,32 @@
 .island #exhibit_draggable5 {
     top: 40.3%;
     left: 12.3%;
-    width: 40px;
-    height: 22px;
+    width: 41px;
+    height: 24px;
     font-size: 16px;
 }
 
 .island #exhibit_draggable6 {
     top: 40.5%;
     left: 24.6%;
-    width: 40px;
-    height: 23px;
+    width: 41px;
+    height: 24px;
     font-size: 16px;
 }
 
 .island #exhibit_draggable7 {
     top: 57.2%;
     left: 25.9%;
-    width: 40px;
-    height: 23px;
+    width: 41px;
+    height: 24px;
     font-size: 16px;
 }
 
 .island #exhibit_draggable8 {
     top: 57.3%;
     left: 38.2%;
-    width: 40px;
-    height: 23px;
+    width: 41px;
+    height: 24px;
     font-size: 16px;
 }
 
@@ -462,8 +465,8 @@
     top: 31.4%;
     left: 38.5%;
     font-size: 18px;
-    height: 32px;
-    width: 60px;
+    height: 33px;
+    width: 62px;
     vertical-align: middle;
 }
 
@@ -471,8 +474,8 @@
     top: 31.4%;
     left: 55.9%;
     font-size: 18px;
-    height: 32px;
-    width: 60px;
+    height: 33px;
+    width: 62px;
     text-align-last: center;
 
 }
@@ -481,80 +484,80 @@
     top: 31.4%;
     left: 73.3%;
     font-size: 18px;
-    height: 32px;
-    width: 60px;
+    height: 33px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable4 {
     top: 31.4%;
     left: 90.7%;
     font-size: 18px;
-    height: 32px;
-    width: 60px;
+    height: 33px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable5 {
     top: 49.6%;
     left: 38.5%;
     font-size: 18px;
-    height: 32px;
-    width: 61px;
+    height: 33px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable6 {
     top: 49.6%;
     left: 55.9%;
     font-size: 18px;
-    height: 32px;
-    width: 61px;
+    height: 33px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable7 {
     top: 49.6%;
     left: 73.3%;
     font-size: 18px;
-    height: 32px;
-    width: 61px;
+    height: 33px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable8 {
     top: 49.6%;
     left: 90.7%;
     font-size: 18px;
-    height: 32px;
-    width: 61px;
+    height: 33px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable9 {
     top: 67.8%;
     left: 38.5%;
     font-size: 18px;
-    height: 32px;
-    width: 61px;
+    height: 33px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable10 {
     top: 67.8%;
     left: 55.9%;
     font-size: 18px;
-    height: 32px;
-    width: 61px;
+    height: 33px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable11 {
     top: 67.8%;
     left: 73.3%;
     font-size: 18px;
-    height: 32px;
-    width: 61px;
+    height: 33px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable12 {
     top: 67.8%;
     left: 90.7%;
     font-size: 18px;
-    height: 32px;
-    width: 61px;
+    height: 33px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable13 {
@@ -562,7 +565,7 @@
     left: 38.5%;
     font-size: 18px;
     height: 33px;
-    width: 61px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable14 {
@@ -570,7 +573,7 @@
     left: 55.9%;
     font-size: 18px;
     height: 33px;
-    width: 61px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable15 {
@@ -578,7 +581,7 @@
     left: 73.3%;
     font-size: 18px;
     height: 33px;
-    width: 61px;
+    width: 62px;
 }
 
 .chart #exhibit2_draggable16 {
@@ -586,7 +589,7 @@
     left: 90.7%;
     font-size: 18px;
     height: 33px;
-    width: 61px;
+    width: 62px;
 }
 
 .right_screen #second_exhibit {
